@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mavjuda Alimova - Qandolatchilik Maktabi</title>
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (Asinxron - Asosiy yuklanishga xalaqit bermaydi) -->
+    <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,7 +24,9 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- Font: Montserrat & Poppins -->
+    <!-- Shriftlarni tezkor yuklash (Preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -122,7 +125,6 @@
             border-radius: 20px;
             padding: 20px 14px;
             text-align: center;
-            /* 3D Effekti */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 
                         inset 0 1px 1px rgba(255, 255, 255, 0.1);
             transform: translateY(0);
@@ -224,12 +226,13 @@
 
             <!-- EKSPERT -->
             <div class="expert-block">
-                <img src="mavjuda-alimova.jpg" alt="Mavjuda Alimova" class="expert-img">
+                <!-- loading="eager" va explicit height/width berish orqali Layout Shift (CLS) bartaraf qilindi -->
+                <img src="mavjuda-alimova.jpg" alt="Mavjuda Alimova" class="expert-img" width="180" height="180" loading="eager">
                 <h2 class="expert-name">Mavjuda Alimova</h2>
                 <p class="expert-sub">Online Qandolatchilik Maktabi</p>
             </div>
 
-            <!-- 4 TA 3D KARTA (PRODUCT BO'LINMASI) -->
+            <!-- 4 TA 3D KARTA -->
             <div class="grid-3d">
                 <div class="card-3d">
                     <span class="icon">🎂</span>
