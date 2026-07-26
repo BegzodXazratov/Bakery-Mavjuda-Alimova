@@ -3,147 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mavjuda Alimova - Onlayn Qandolatchilik Maktabi</title>
-    <!-- Google Fonts: Playfair Display (Sarlavhalar) & Inter (Matnlar) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Mavjuda Alimova - Qandolatchilik Maktabi</title>
+    <!-- Yangilangan zamonaviy va nafis shriftlar: Poppins & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #1a0f13;
-            --card-bg: #28171e;
-            --accent-gold: #e2b168;
-            --accent-rose: #d9777f;
-            --text-main: #fcf8f5;
-            --text-sub: #d1c2c7;
-            --telegram-color: #229ed9;
+            --bg-dark: #12090e;
+            --card-bg: #1e1017;
+            --accent-gold: #f3c272;
+            --accent-pink: #e05297;
+            --text-main: #ffffff;
+            --text-sub: #b8a5b0;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
             min-height: 100vh;
-            background: linear-gradient(180deg, #1f1116 0%, #12090c 100%);
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            background: linear-gradient(180deg, #180b13 0%, #0d0509 100%);
+            box-shadow: 0 0 40px rgba(0,0,0,0.9);
             position: relative;
         }
 
-        /* ---------------- SECTION 1: HERO & MAIN OFFER ---------------- */
+        /* ---------------- EKRAN 1: HERO & EXPRT ---------------- */
         .section-hero {
-            padding: 30px 20px 40px 20px;
+            padding: 32px 20px 36px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(226, 177, 104, 0.15);
+            border-bottom: 1px solid rgba(243, 194, 114, 0.12);
         }
 
         .badge-tag {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(226, 177, 104, 0.1);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
+            background: rgba(224, 82, 151, 0.12);
+            border: 1px solid var(--accent-pink);
+            color: var(--accent-pink);
             padding: 6px 16px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .hero-title {
-            font-size: 26px;
-            line-height: 1.3;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.35;
             margin-bottom: 24px;
             color: #fff;
         }
 
         .hero-title span {
             color: var(--accent-gold);
-            font-style: italic;
+            background: linear-gradient(90deg, #f3c272, #e05297);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .expert-profile {
             position: relative;
-            margin: 0 auto 24px auto;
-            width: 170px;
-            height: 170px;
+            margin: 0 auto 18px auto;
+            width: 160px;
+            height: 160px;
         }
 
+        /* 1-variant: GitHub repo'ga yuklanadigan rasm fayli */
         .expert-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
             border: 3px solid var(--accent-gold);
-            box-shadow: 0 10px 25px rgba(226, 177, 104, 0.2);
+            box-shadow: 0 10px 30px rgba(224, 82, 151, 0.25);
         }
 
         .expert-name {
             font-size: 20px;
             font-weight: 700;
-            color: var(--text-main);
+            color: #fff;
             margin-bottom: 4px;
         }
 
         .expert-bio {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-sub);
             margin-bottom: 24px;
+            padding: 0 10px;
         }
 
-        /* CTA Button */
+        /* CTA Tugma */
         .btn-tg {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             background: linear-gradient(135deg, #0088cc, #229ed9);
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            padding: 18px 24px;
+            padding: 18px 16px;
             border-radius: 16px;
             font-weight: 700;
-            font-size: 17px;
-            box-shadow: 0 8px 25px rgba(34, 158, 217, 0.35);
-            transition: all 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 10px 25px rgba(34, 158, 217, 0.4);
+            transition: transform 0.2s;
             animation: pulse-glow 2s infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .btn-tg svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: currentColor;
+            flex-shrink: 0;
         }
 
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 0 0 rgba(34, 158, 217, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 158, 217, 0); }
+            70% { box-shadow: 0 0 0 14px rgba(34, 158, 217, 0); }
             100% { box-shadow: 0 0 0 0 rgba(34, 158, 217, 0); }
         }
 
-        /* ---------------- SECTION 2: RECIPES & ADVANTAGES ---------------- */
+        /* ---------------- EKRAN 2: DETAILS & GALLERY ---------------- */
         .section-details {
-            padding: 40px 20px;
+            padding: 36px 20px;
         }
 
         .section-heading {
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--accent-gold);
             margin-bottom: 20px;
         }
@@ -153,14 +163,14 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .gallery-item {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.06);
             text-align: center;
             padding-bottom: 8px;
         }
@@ -182,16 +192,16 @@
         .features-list {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 20px;
-            border: 1px solid rgba(226, 177, 104, 0.15);
-            margin-bottom: 30px;
+            padding: 20px 18px;
+            border: 1px solid rgba(243, 194, 114, 0.15);
+            margin-bottom: 28px;
         }
 
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 18px;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
         .feature-item:last-child {
@@ -199,11 +209,11 @@
         }
 
         .feature-icon {
-            background: rgba(226, 177, 104, 0.15);
+            background: rgba(243, 194, 114, 0.12);
             color: var(--accent-gold);
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -212,22 +222,23 @@
         }
 
         .feature-text h4 {
-            font-size: 15px;
+            font-size: 14px;
+            font-weight: 700;
             color: #fff;
             margin-bottom: 2px;
         }
 
         .feature-text p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-sub);
+            line-height: 1.4;
         }
 
-        /* Footer / Sub-note */
         .footer-note {
             text-align: center;
             font-size: 12px;
             color: var(--text-sub);
-            margin-top: 15px;
+            margin-top: 14px;
             opacity: 0.8;
         }
     </style>
@@ -236,35 +247,36 @@
 
     <div class="container">
         
-        <!-- ================= SAHIFA 1: HOOK & EKSPERT ================= -->
+        <!-- ================= EKRAN 1 ================= -->
         <section class="section-hero">
             <div class="badge-tag">
-                🎂 Professional Qandolatchilik Maktabi
+                🎂 Onlayn Qandolatchilik Maktabi
             </div>
 
             <h1 class="hero-title">
-                Oyiga <span>120.000 so'm</span> to'lab <span>100 dan oshiq</span> saralangan retseptlarga ega bo'ling!
+                Oyiga <span>120.000 so'm</span> to'lab <span>100 dan oshiq</span> retseptga ega bo'ling!
             </h1>
 
             <div class="expert-profile">
-                <!-- Mavjuda Alimova rasmi -->
-                <img src="https://i.ibb.co/L5BwY3R/mavjuda-alimova.jpg" alt="Mavjuda Alimova" class="expert-img">
+                <!-- GitHub repository'ga yuklanadigan rasm fayli nomi -->
+                <img src="mavjuda-alimova.jpg" alt="Mavjuda Alimova" class="expert-img">
             </div>
 
             <h2 class="expert-name">Mavjuda Alimova</h2>
-            <p class="expert-bio">149.000+ kuzatuvchiga ega tajribali qandolat ustasi va "Alimova Maktabi" asoschisi</p>
+            <p class="expert-bio">149.000+ obunachiga ega tajribali qandolat ustasi va "Alimova Maktabi" asoschisi</p>
 
+            <!-- O'zgartirilgan CTA Tugma -->
             <a href="https://t.me/mavjuda_alimova_retseptlar" class="btn-tg" target="_blank">
                 <svg viewBox="0 0 24 24">
                     <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.68-.55.84-1.12.52l-3.05-2.25-1.47 1.42c-.16.16-.3.3-.62.3l.22-3.11 5.66-5.12c.25-.22-.05-.34-.38-.12l-7 4.41-3.02-.94c-.66-.21-.67-.66.14-.98l11.81-4.55c.55-.2 1.02.13.8 1.04z"/>
                 </svg>
-                KURSNI OLISH (TELEGRAM)
+                Telegram kanal (120 ming/oyiga)
             </a>
         </section>
 
-        <!-- ================= SAHIFA 2: MAKTAB HAQIDA & RETSEPTLAR ================= -->
+        <!-- ================= EKRAN 2 ================= -->
         <section class="section-details">
-            <h3 class="section-heading">Maktabimizda Nimalarni O'rganasiz?</h3>
+            <h3 class="section-heading">Maktabimizda Nimalar Bor?</h3>
 
             <!-- Pishiriqlar galereyasi -->
             <div class="gallery-grid">
@@ -274,7 +286,7 @@
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400" alt="Napoleon">
-                    <p>Napoleon & Piramidalar</p>
+                    <p>Napoleon & Piramida</p>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=400" alt="Kekslar">
@@ -282,13 +294,13 @@
                 </div>
             </div>
 
-            <!-- Afzalliklar / Shartlar -->
+            <!-- Afzalliklar -->
             <div class="features-list">
                 <div class="feature-item">
                     <div class="feature-icon">👩‍🍳</div>
                     <div class="feature-text">
                         <h4>0-dan Boshlab O'rgatiladi</h4>
-                        <p>Boshlang'ich darajadagilar ham osongina mukammal pishiriqlar tayyorlay oladi.</p>
+                        <p>Boshlang'ich darajada bo'lsangiz ham osongina mukammal pishiriqlar tayyorlaysiz.</p>
                     </div>
                 </div>
 
@@ -304,15 +316,15 @@
                     <div class="feature-icon">💬</div>
                     <div class="feature-text">
                         <h4>Savol-Javob va Qo'llash</h4>
-                        <p>Har bir darsdan so'ng ustoz va moderatorlar savollaringizga javob berishadi.</p>
+                        <p>Darslardan so'ng savollaringizga ustoz tomonidan javob beriladi.</p>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <div class="feature-icon">💳</div>
                     <div class="feature-text">
-                        <h4>Hamyonbop Oylik To'lov</h4>
-                        <p>Atigi 120.000 so'm evaziga yuzlab qimmatli sirlardan bahramand bo'ling.</p>
+                        <h4>Qulay Oylik Obuna</h4>
+                        <p>Atigi 120.000 so'm evaziga yuzlab qimmatli retseptlardan bahramand bo'lasiz.</p>
                     </div>
                 </div>
             </div>
@@ -322,10 +334,10 @@
                 <svg viewBox="0 0 24 24">
                     <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.68-.55.84-1.12.52l-3.05-2.25-1.47 1.42c-.16.16-.3.3-.62.3l.22-3.11 5.66-5.12c.25-.22-.05-.34-.38-.12l-7 4.41-3.02-.94c-.66-.21-.67-.66.14-.98l11.81-4.55c.55-.2 1.02.13.8 1.04z"/>
                 </svg>
-                TELEGRAM KANALGA O'TISH
+                Telegram kanal (120 ming/oyiga)
             </a>
 
-            <p class="footer-note">Batafsil to'lov rekvizitlari va shartlar Telegram bot va kanalda berilgan.</p>
+            <p class="footer-note">Batafsil to'lov rekvizitlari Telegram kanalimizda berilgan.</p>
         </section>
 
     </div>
