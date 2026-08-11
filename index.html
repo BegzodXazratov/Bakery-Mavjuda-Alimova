@@ -16,9 +16,9 @@
     --bg:        #FAF7F2;
     --bg-card:   #FFFFFF;
     --bg-alt:    #F2EDE4;
-    --text:      #1A110B; /* Контраст учун тўқлаштирилди */
-    --muted:     #54463A; /* Контраст учун тўқлаштирилди */
-    --gold:      #A37500; /* Яхшироқ кўриниши учун тўқ тилларанг */
+    --text:      #1A110B;
+    --muted:     #54463A;
+    --gold:      #A37500;
     --gold-lt:   #D4A017;
     --gold-bg:   rgba(184,134,11,.09);
     --line:      rgba(184,134,11,.22);
@@ -29,7 +29,6 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  /* Ўқишлиликни ошириш учун font-weight 400 қилинди */
   body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   b, strong {font-weight: 600; color: var(--text);}
@@ -98,15 +97,15 @@
   .card-body h3{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.3;margin-bottom:7px}
   .card-body p{font-size:13px;color:var(--muted);line-height:1.55}
 
-  /* ——— INCLUDES ——— */
-  .inc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(20px,4vw,48px)}
-  @media(max-width:700px){.inc-grid{grid-template-columns:1fr}}
-  .inc{display:flex;gap:16px;padding:22px 0;border-top:1px solid var(--line-soft)}
-  .inc-num{font-family:var(--display);font-weight:700;font-size:11px;color:var(--gold);letter-spacing:.12em;padding-top:3px;min-width:24px}
-  .inc h3{font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:5px}
-  .inc p{font-size:13.5px;color:var(--muted)}
+  /* ——— TABLE (TARKIB) ——— */
+  .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line-soft);background:var(--bg-card);box-shadow:0 4px 16px rgba(43,30,20,.04)}
+  .tarkib-table{width:100%;border-collapse:collapse;min-width:500px}
+  .tarkib-table th, .tarkib-table td{padding:18px 24px;text-align:left;border-bottom:1px solid var(--line-soft)}
+  .tarkib-table th{background:var(--gold-bg);font-family:var(--display);font-size:13px;color:var(--gold);text-transform:uppercase;width:30%}
+  .tarkib-table td{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .tarkib-table tr:last-child td, .tarkib-table tr:last-child th{border-bottom:none}
 
-  /* ——— PRICING GRID (2 TA TARIF) ——— */
+  /* ——— PRICING GRID (NO PRICES) ——— */
   .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,32px);max-width:960px;margin:0 auto;align-items:stretch}
   @media(max-width:768px){.price-grid{grid-template-columns:1fr}}
 
@@ -115,41 +114,32 @@
   
   .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;white-space:nowrap}
 
-  .price-title{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;margin-top:8px}
-  .price-num{font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1;color:var(--gold);letter-spacing:-.02em;margin-top:10px}
-  .price-per{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .price-title{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;margin-top:12px; margin-bottom: 8px;}
+  .price-per{font-family:var(--display);font-weight:600;font-size:13px;color:var(--gold);margin-top:6px; margin-bottom: 16px;}
   
-  .rules{text-align:left;margin:24px 0;display:grid;gap:12px;flex-grow:1}
-  .rules li{list-style:none;font-size:13.5px;color:var(--muted);padding-left:22px;position:relative;line-height:1.5}
+  .rules{text-align:left;margin:16px 0 24px;display:grid;gap:12px;flex-grow:1}
+  .rules li{list-style:none;font-size:14px;color:var(--muted);padding-left:22px;position:relative;line-height:1.5}
   .rules li::before{content:"";position:absolute;left:4px;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 
-  /* ——— STEPS ——— */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-bottom:36px}
-  @media(max-width:620px){.steps{grid-template-columns:1fr}}
-  .step{background:var(--bg-card);border:1px solid var(--line-soft);border-radius:16px;padding:26px 20px;text-align:center;box-shadow:0 2px 12px rgba(43,30,20,.05)}
-  .step-num{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;font-family:var(--display);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-  .step h3{font-family:var(--display);font-weight:700;font-size:14px;margin-bottom:7px}
-  .step p{font-size:13px;color:var(--muted)}
+  /* ——— FAQ ——— */
+  .faq-grid{display:grid;gap:12px;max-width:800px;margin:0 auto}
+  details{background:var(--bg-card);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;transition:box-shadow .3s}
+  details:hover{box-shadow:0 4px 12px rgba(43,30,20,.05)}
+  summary{padding:18px 24px;font-family:var(--display);font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';color:var(--gold);font-size:24px;line-height:1}
+  details[open] summary::after{content:'-'}
+  .faq-ans{padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.6}
 
-  /* ——— PAYMENT ——— */
-  .pay-container{max-width:680px;margin:0 auto;border:1.5px solid var(--line);border-radius:20px;background:var(--bg-card);padding:clamp(24px,4vw,40px);text-align:center}
-  .pay{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
-  @media(max-width:520px){.pay{grid-template-columns:1fr}}
-  .cardbox{border:1.5px solid var(--line);border-radius:14px;padding:18px;text-align:left;background:var(--bg-alt)}
-  .cardbox .num{font-family:var(--display);font-weight:700;font-size:clamp(14px,3.2vw,17px);letter-spacing:.05em;display:block;margin-bottom:5px;color:var(--text)}
-  .cardbox .own{font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
-  .copy-btn{margin-top:11px;font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:none;border:1.5px solid var(--gold);border-radius:100px;padding:7px 14px;cursor:pointer;transition:background .2s,color .2s}
-  .copy-btn:hover{background:var(--gold);color:#fff}
-  .pay-btns{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:12px}
-
-  /* ——— FOOTER ——— */
-  footer{border-top:1px solid var(--line-soft);background:var(--bg-alt);padding:clamp(38px,6vw,60px) 0 32px}
-  .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
-  @media(max-width:700px){.foot-grid{grid-template-columns:1fr}}
-  .foot-grid h4{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:13px}
-  .foot-grid li{list-style:none;margin-bottom:8px;font-size:13px;color:var(--muted)}
-  .foot-grid li a:hover{color:var(--gold)}
-  .copy{margin-top:34px;padding-top:18px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--display);font-weight:600;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  /* ——— SOCIAL FOOTER ——— */
+  .social-footer{border-top:1px solid var(--line-soft);background:var(--bg-alt);padding:clamp(38px,6vw,60px) 0}
+  .social-wrap{max-width:600px;margin:0 auto;text-align:center}
+  .social-wrap h3{font-family:var(--display);font-weight:700;font-size:20px;margin-bottom:24px;text-transform:uppercase}
+  .social-flex{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+  .social-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;padding:16px 24px;border-radius:100px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--text);border:1.5px solid var(--line-soft);transition:transform .2s,border-color .2s}
+  .social-btn:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .social-btn svg{width:24px;height:24px}
+  .copy{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   /* ——— STICKY MOBILE CTA ——— */
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:rgba(250,247,242,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line-soft);display:none}
@@ -170,10 +160,9 @@
     <div class="nav-links">
       <a href="#yonalishlar">Йўналишлар</a>
       <a href="#tarkib">Нима оласиз</a>
-      <a href="#narx">Тарифлар</a>
-      <a href="#tolov">Тўлов</a>
+      <a href="#aloqa">Тарифлар</a>
     </div>
-    <a href="#narx" class="nav-tg">Рўйхатдан ўтиш</a>
+    <a href="#aloqa" class="nav-tg">Рўйхатдан ўтиш</a>
   </div>
 </nav>
 
@@ -185,9 +174,10 @@
       <h1>Мавжуда <span>Алимова</span></h1>
       <p class="hook"><b>100 дан ортиқ</b> профессионал рецептга эга бўлинг ва ўз <b>бизнесингизни бошланг</b>.</p>
       <p class="hero-sub"><b>114 та</b> қадамма-қадам видео дарс, ҳар ҳафта янгиланиб борадиган ёпиқ Telegram канали.</p>
-      <a href="#narx" class="btn">Тарифни танлаш — 120 000 сўмдан</a>
+      <a href="#aloqa" class="btn">Рўйхатдан ўтиш</a>
     </div>
     <div class="arch">
+      <!-- Изоҳ: Расм манбасини ўзингиздаги мавжуд файлга мосланг -->
       <img src="mavjuda.jpg" alt="Мавжуда Алимова — қандолатчилик устози" width="380" height="507" loading="eager">
     </div>
   </div>
@@ -261,7 +251,7 @@
   </div>
 </section>
 
-<!-- НИМА ОЛАСИЗ -->
+<!-- НИМА ОЛАСИЗ (TABLE FORMAT) -->
 <section class="sec sec-alt" id="tarkib">
   <div class="wrap">
     <div class="sec-head rv">
@@ -271,32 +261,64 @@
       </div>
       <p>Обуна ёки <b>доимий аъзолик</b> орқали каналдаги барча манбаларга эга бўласиз.</p>
     </div>
-    <div class="inc-grid">
-      <div class="inc rv">
-        <div class="inc-num">01</div>
-        <div><h3>114 та видео рецепт</h3><p>Бошидан охиригача <b>қадамма-қадам</b> суратга олинган, тушунарли изоҳлар билан.</p></div>
-      </div>
-      <div class="inc rv">
-        <div class="inc-num">02</div>
-        <div><h3>Ҳар ҳафта янги дарслар</h3><p>Канал тўхтамайди: ҳар ҳафта <b>янги рецепт ва амалий маслаҳатлар</b> қўшилади.</p></div>
-      </div>
-      <div class="inc rv">
-        <div class="inc-num">03</div>
-        <div><h3>Савол-жавоб ва қўллаб-қувватлаш</h3><p>Дарсдан кейин саволингизга устознинг <b>ўзи жавоб беради</b>.</p></div>
-      </div>
-      <div class="inc rv">
-        <div class="inc-num">04</div>
-        <div><h3>Таннарх ва бизнес сирлари</h3><p>Пиширганингизни <b>даромадга айлантириш учун</b> ҳисоб-китоб ва нарх йўриқномаси.</p></div>
-      </div>
+    
+    <div class="table-wrap rv">
+      <table class="tarkib-table">
+        <tbody>
+          <tr>
+            <th>114 та видео рецепт</th>
+            <td>Бошидан охиригача <b>қадамма-қадам</b> суратга олинган, тушунарли изоҳлар билан тайёрланган дарслар.</td>
+          </tr>
+          <tr>
+            <th>Ҳафталик янгиланиш</th>
+            <td>Канал тўхтамайди: ҳар ҳафта <b>янги рецепт ва амалий маслаҳатлар</b> доимий равишда қўшилиб борилади.</td>
+          </tr>
+          <tr>
+            <th>Қўллаб-қувватлаш</th>
+            <td>Дарсдан кейин туғилган ҳар қандай саволингизга устознинг <b>ўзи тўғридан-тўғри жавоб беради</b>.</td>
+          </tr>
+          <tr>
+            <th>Бизнес сирлари</th>
+            <td>Пиширганингизни <b>даромадга айлантириш учун</b> маҳсулот таннархини чиқариш ва нарх белгилаш йўриқномаси.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- НАРХ (2 ТА ТАРИФ) -->
-<section class="sec" id="narx">
+<!-- FAQ (КЎП БЕРИЛАДИГАН САВОЛЛАР) -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv" style="justify-content:center; text-align:center;">
+      <div>
+        <p class="eyebrow">Маълумот</p>
+        <h2>Кўп бериладиган саволлар</h2>
+      </div>
+    </div>
+    
+    <div class="faq-grid rv">
+      <details>
+        <summary>Дарслар қандай форматда бўлади?</summary>
+        <div class="faq-ans">Барча дарслар ёпиқ Telegram каналда видео ва матнли қўлланма шаклида тақдим этилади. Видеоларни тўғридан-тўғри канал ичида томоша қиласиз, ўлчовлар ва керакли масаллиқлар эса матн шаклида ёзиб қолдирилади.</div>
+      </details>
+      <details>
+        <summary>Менда умуман тажриба йўқ, эплай оламанми?</summary>
+        <div class="faq-ans">Албатта! Рецептлар энг нолдан бошлаб, ҳар бир майда деталларигача тушунтирилган. Қўшимчасига, қийналган жойингизда устоздан ёрдам ва маслаҳат олишингиз мумкин.</div>
+      </details>
+      <details>
+        <summary>Тўлов қилгандан кейин нима бўлади?</summary>
+        <div class="faq-ans">Бот орқали рўйхатдан ўтиб, тўловни тасдиқлаганингиздан сўнг, сизга ёпиқ каналга кириш учун махсус ҳавола (ссылка) берилади ва сиз дарҳол барча дарсларга уланасиз.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- НАРХЛАР ВА АЛОҚА (РОЙХАТДАН ЎТИШ) -->
+<section class="sec sec-alt" id="aloqa">
   <div class="wrap">
     <div class="sec-head rv" style="text-align:center; display:block; margin-bottom:40px;">
-      <p class="eyebrow">Ўқув тарифлари</p>
+      <p class="eyebrow">Тарифлар ва уланиш</p>
       <h2>Ўзингизга мос тарифни танланг</h2>
     </div>
 
@@ -305,17 +327,15 @@
       <div class="price-box rv">
         <div>
           <h3 class="price-title">Ойлик обуна</h3>
-          <div class="price-num">120 000</div>
-          <div class="price-per">сўм / бир ой</div>
+          <div class="price-per">Ҳар ой янгиланувчи тўлов</div>
           <ul class="rules">
             <li><b>114+</b> видео рецепт ва барча янги дарслар.</li>
             <li>Тўлов <b>ҳар ой</b> амалга оширилади.</li>
             <li>Тўлов қилинмаса, бот аъзони <b>автоматик чиқаради</b>.</li>
-            <li>Видеоларни юклаб олиш мумкин эмас — <b>фақат каналда кўрилади</b>.</li>
             <li>Обуна фаол вақтида барча эски дарслар <b>очиқ туради</b>.</li>
           </ul>
         </div>
-        <a href="#tolov" class="btn ghost">Ойлик обунага уланиш</a>
+        <a href="https://t.me/mavjudaalimova_bot" class="btn ghost">Бот орқали бошлаш</a>
       </div>
 
       <!-- 2-ТАРИФ: ДОИМИЙ (VIP) -->
@@ -323,115 +343,45 @@
         <div class="badge">Энг фойдалиси</div>
         <div>
           <h3 class="price-title">Доимий аъзолик</h3>
-          <div class="price-num">2 000 000</div>
-          <div class="price-per">сўм / бир марталик тўлов</div>
+          <div class="price-per">Бир марталик тўлов — чексиз рухсат</div>
           <ul class="rules">
             <li><b>Каналга чексиз (чекланмаган) муддатга уланиш.</b></li>
             <li>Ойлик тўловлар ҳақида <b>қайта қайғурмайсиз</b>.</li>
-            <li><b>114+</b> мавжуд видео рецептларнинг барчасига кириш.</li>
             <li>Келажакда қўшиладиган барча янги дарсларга <b>бепул кириш</b>.</li>
             <li>Устоздан устувор (приоритетли) <b>савол-жавоб ва қўллаб-қувватлаш</b>.</li>
           </ul>
         </div>
-        <a href="#tolov" class="btn">Доимий аъзоликни сотиб олиш</a>
+        <a href="https://t.me/mavjudaalimova_bot" class="btn">Бот орқали бошлаш</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ТЎЛОВ -->
-<section class="sec sec-alt" id="tolov">
+<!-- СОЦИАЛ ТАРМОҚЛАР (FOOTER) -->
+<footer class="social-footer">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div>
-        <p class="eyebrow">Тўлов</p>
-        <h2>Уч қадамда уланинг</h2>
+    <div class="social-wrap rv">
+      <h3>Биз билан боғланиш</h3>
+      <div class="social-flex">
+        <a href="https://www.instagram.com/alimova_mavjuda" class="social-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram саҳифамизга ўтиш
+        </a>
+        <a href="https://t.me/mavjudaalimova_bot" class="social-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          Telegram бот орқали ёзиш
+        </a>
       </div>
-      <p>Тўловдан сўнг скриншот ва танлаган тарифингизни админга юборинг.</p>
-    </div>
-
-    <div class="steps rv">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Картага ўтказинг</h3>
-        <p>Танлаган тарифингизга мос суммани (<b>120 000</b> ёки <b>2 000 000</b> сўм) ўтказинг.</p>
+      <div class="copy">
+        © 2026 Мавжуда Алимова · Онлайн қандолатчилик мактаби
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Скриншот юборинг</h3>
-        <p>Тўлов скриншоти, исмингиз ва тариф номини Telegram орқали юборинг.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Каналга киринг</h3>
-        <p>Админ сизни ёпиқ Telegram каналга қўшади — <b>дарсларга уланинг!</b></p>
-      </div>
-    </div>
-
-    <div class="pay-container rv">
-      <p class="eyebrow">Пластик карталар</p>
-      <div class="pay">
-        <div class="cardbox">
-          <span class="num">5614 6814 2517 2255</span>
-          <span class="own">САМАТОВА МОҲИРА</span><br>
-          <button class="copy-btn" data-card="5614681425172255">Нусхалаш</button>
-        </div>
-        <div class="cardbox">
-          <span class="num">5614 6822 1755 8982</span>
-          <!-- 1-ТОПШИРИҚ: Исм ўзгартирилди -->
-          <span class="own">ХОДЖАБЕРГАНОВ ИБРОҲИМ</span><br>
-          <button class="copy-btn" data-card="5614682217558982">Нусхалаш</button>
-        </div>
-      </div>
-      <div class="pay-btns">
-        <a href="https://t.me/+998775121113" class="btn">Админга ёзиш — +998 77 512 11 13</a>
-        <!-- 2-ТОПШИРИҚ: Тугма ёзуви ва ҳаволаси ботга алмаштирилди -->
-        <a href="https://t.me/mavjudaalimova_bot" class="btn ghost">Telegram бот орқали ёзилиш</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h4>Алоқа</h4>
-        <ul>
-          <!-- 4-ТОПШИРИҚ: Footer'даги ҳавола ботга алмаштирилди -->
-          <li><a href="https://t.me/mavjudaalimova_bot">Telegram бот — @mavjudaalimova_bot</a></li>
-          <li><a href="https://t.me/+998775121113">Админ — +998 77 512 11 13</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Мактаб</h4>
-        <ul>
-          <li><a href="#yonalishlar">Йўналишлар</a></li>
-          <li><a href="#tarkib">Обуна ичида нима бор</a></li>
-          <li><a href="#narx">Тарифлар ва шартлар</a></li>
-          <li><a href="#tolov">Тўлов тартиби</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Шартлар</h4>
-        <ul>
-          <li>Ойлик тариф — <b>ҳар ой</b> амалга оширилади</li>
-          <li>Доимий аъзолик — <b>бир марталик тўлов</b></li>
-          <li>Видеолар фақат канал ичида кўрилади</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copy">
-      <span>© 2026 Мавжуда Алимова</span>
-      <span>Онлайн қандолатчилик мактаби</span>
     </div>
   </div>
 </footer>
 
-<!-- STICKY MOBILE -->
+<!-- STICKY MOBILE CTA -->
 <div class="sticky">
-  <a href="#narx" class="btn">Тарифни танлаш — 120 000 сўмдан</a>
+  <a href="#aloqa" class="btn">Рўйхатдан ўтиш</a>
 </div>
 
 <script>
@@ -442,17 +392,6 @@
   document.querySelectorAll('.rv').forEach(function(el,i){
     el.style.transitionDelay = (i % 3) * 80 + 'ms';
     obs.observe(el);
-  });
-
-  // Karta nusxalash
-  document.querySelectorAll('.copy-btn').forEach(function(b){
-    b.addEventListener('click', function(){
-      navigator.clipboard.writeText(b.dataset.card).then(function(){
-        var t = b.textContent;
-        b.textContent = '✓ Нусхаланди';
-        setTimeout(function(){ b.textContent = t; }, 1800);
-      });
-    });
   });
 
   // Meta Pixel lead
